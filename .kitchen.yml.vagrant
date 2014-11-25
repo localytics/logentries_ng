@@ -1,0 +1,17 @@
+---
+driver_plugin: vagrant
+
+platforms:
+- name:  debian-7.4
+  driver:
+    provider: virtualbox
+    customize:
+      memory: 1024
+
+suites:
+- name: default
+  run_list:
+    - recipe[logentries_ng_test_helper]
+  attributes:
+    logentries:
+      account_key: <%= ENV['LOGENTRIES_API_KEY'] %>
