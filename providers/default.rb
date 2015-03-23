@@ -41,7 +41,7 @@ action :install do
       apt_repository 'logentries' do
         uri 'http://rep.logentries.com/'
         components ['precise', 'main']
-        keyserver 'hkp://pgp.mit.edu:80'
+        keyserver 'keyserver.ubuntu.com'
         key 'C43C79AD'
       end
     when "debian"
